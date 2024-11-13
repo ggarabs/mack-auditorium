@@ -17,6 +17,7 @@ public class Espetaculo {
     }
 
     public Entrada novaEntrada(Integer tipo, Integer assento){
+        return new Entrada(assento);
     }
 
     public double getPreco(){

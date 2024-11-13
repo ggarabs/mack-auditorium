@@ -1,0 +1,5 @@
+*** MACK THEATER ***
+1) Cadastrar Espetáculo
+2) Cadastrar Cliente
+3) Compra de Entradas
+4) Sair

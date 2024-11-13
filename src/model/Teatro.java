@@ -25,6 +25,6 @@ public class Teatro {
     }
 
     public double finalizaCompra(String cpf){
-
+        return 0.0f;
     }
 }

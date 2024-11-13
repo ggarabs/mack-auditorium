@@ -7,6 +7,6 @@ public class Pedido {
     }
 
     public double calculaValorTotal(){
-        
+        return 0.0f;
     }
 }
