@@ -1,17 +1,17 @@
 import java.io.File;
 import java.io.FileNotFoundException;
-import java.util.ArrayList;
 import java.util.Scanner;
 
-import model.Espetaculo;
-import model.Espetaculos;
+import model.Teatro;
+import services.CadastrarCliente;
 import services.CadastrarEspetaculo;
+import services.ComprarEntrada;
 
 public class Main{
     public static void main(String[] args) {
         Integer initialOption = null;
         String initialMenuPath = "view/initial_menu.txt";
-        Espetaculos shows = new Espetaculos();
+        Teatro mackTheater = new Teatro();
 
         try {
             do {
@@ -25,13 +25,17 @@ public class Main{
 
                 initialOption = inputSc.nextInt();
 
+                System.out.println();
+
                 switch (initialOption) {
                     case 1:
-                        CadastrarEspetaculo.cadastrar();
+                        CadastrarEspetaculo.cadastrar(mackTheater);
                         break;
                     case 2:
+                        CadastrarCliente.cadastrar(mackTheater);
                         break;
                     case 3:
+                        ComprarEntrada.comprar(mackTheater);
                         break;
                     case 4:
                         break;

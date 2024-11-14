@@ -1,9 +1,16 @@
 package model;
 
+import java.util.ArrayList;
+
 public class Pedido {
-    public Pedido(){}
+    private ArrayList<Entrada> entradas;
+
+    public Pedido(){
+        this.entradas = new ArrayList<Entrada>();
+    }
 
     public void adicionaEntrada(Entrada entrada){
+        entradas.add(entrada);
     }
 
     public double calculaValorTotal(){

@@ -1,10 +1,15 @@
 package model;
 
 public class Entrada {
-    private Integer numeroDoAssento;
+    protected Integer numeroDoAssento;
+    protected Espetaculo espetaculo;
 
     public Entrada(Integer numero){
         this.numeroDoAssento = numero;
+    }
+
+    public Entrada(){
+        this.numeroDoAssento = null;
     }
 
     public double calculaValor(){

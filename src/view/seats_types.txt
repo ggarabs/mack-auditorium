@@ -1,0 +1,4 @@
+    ||| Tipos de Entrada |||
+    1) Inteira
+    2) Meia       50% do valor da entrada
+    3) Professor  40% do valor da entrada
