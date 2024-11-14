@@ -1,11 +1,17 @@
 import java.io.File;
 import java.io.FileNotFoundException;
+import java.util.ArrayList;
 import java.util.Scanner;
+
+import model.Espetaculo;
+import model.Espetaculos;
+import services.CadastrarEspetaculo;
 
 public class Main{
     public static void main(String[] args) {
         Integer initialOption = null;
-        String initialMenuPath = "src/view/initial_menu.txt";
+        String initialMenuPath = "view/initial_menu.txt";
+        Espetaculos shows = new Espetaculos();
 
         try {
             do {
@@ -19,8 +25,21 @@ public class Main{
 
                 initialOption = inputSc.nextInt();
 
+                switch (initialOption) {
+                    case 1:
+                        CadastrarEspetaculo.cadastrar();
+                        break;
+                    case 2:
+                        break;
+                    case 3:
+                        break;
+                    case 4:
+                        break;
+                    default:
+                        break;
+                }
+
                 System.out.println();
-                
             } while (initialOption != 4);
         } catch (FileNotFoundException err) {
             System.out.println("Erro ao ler o arquivo: " + err);
