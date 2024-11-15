@@ -2,7 +2,7 @@ package model;
 
 public class EntradaMeia extends Entrada {
     public EntradaMeia(Integer numero){
-        this.numeroDoAssento = numero;
+        super(numero);
     }
 
     public double calculaValor(){

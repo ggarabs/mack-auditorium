@@ -9,7 +9,7 @@ abstract class Entrada {
     }
 
     public Entrada(){
-        this.numeroDoAssento = null;
+        this.numeroDoAssento = -1;
     }
 
     public Integer getNumeroDoAssento(){
