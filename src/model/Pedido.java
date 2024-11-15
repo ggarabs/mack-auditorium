@@ -14,6 +14,10 @@ public class Pedido {
     }
 
     public double calculaValorTotal(){
-        return 0.0f;
+        double valor = 0.0f;
+
+        for(Entrada aux : entradas) valor += aux.calculaValor();
+
+        return valor;
     }
 }

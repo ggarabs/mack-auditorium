@@ -10,7 +10,7 @@ import services.ComprarEntrada;
 public class Main{
     public static void main(String[] args) {
         Integer initialOption = null;
-        String initialMenuPath = "view/initial_menu.txt";
+        String initialMenuPath = "src/view/initial_menu.txt";
         Teatro mackTheater = new Teatro();
 
         try {

@@ -7,7 +7,7 @@ import java.util.Scanner;
 import model.Teatro;
 
 public class ComprarEntrada {
-    public static void comprar(Teatro mackTeatro){
+    public static double comprar(Teatro mackTeatro){
         Scanner sc = new Scanner(System.in);
 
         mackTeatro.novaCompra();
@@ -21,7 +21,7 @@ public class ComprarEntrada {
         StringBuilder content = new StringBuilder();
 
         try {
-            Scanner seatsTypesSc = new Scanner(new File("view/seats_types.txt"));
+            Scanner seatsTypesSc = new Scanner(new File("src/view/seats_types.txt"));
             while(seatsTypesSc.hasNextLine()) content.append(seatsTypesSc.nextLine()).append(System.lineSeparator());
         } catch (FileNotFoundException err) {
             System.out.println("Falhou!! " + err);
@@ -39,9 +39,19 @@ public class ComprarEntrada {
 
             Integer priceIndex = sc.nextInt();
 
-                mackTeatro.novaEntrada(seatIndex, priceIndex);
-                System.out.print("Deseja comprar uma outra entrada (S/N)? ");
-                resp = sc.next();
+            mackTeatro.novaEntrada(priceIndex, seatIndex);
+            System.out.print("Deseja comprar uma outra entrada (S/N)? ");
+            resp = sc.next();
         } while (!resp.equals("N"));
+
+        System.out.print("Informe o CPF do Cliente Cadastrado: ");
+
+        String cpf = sc.next();
+
+        double valorTotal = mackTeatro.finalizaCompra(cpf);
+
+        System.out.println("Valor Total: R$ " + valorTotal);
+
+        return valorTotal;
     }
 }

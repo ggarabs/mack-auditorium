@@ -13,6 +13,11 @@ public class Cliente {
         this.pedidos = new ArrayList<Pedido>();
     }
 
+    public String getCpf(){
+        return this.cpf;
+    }
+
     public void adicionaPedido(Pedido pedido){
+        pedidos.add(pedido);
     }
 }

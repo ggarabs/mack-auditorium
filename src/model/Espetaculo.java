@@ -64,6 +64,8 @@ public class Espetaculo {
                 break;
         }
 
+        entrada.setEspetaculo(this);
+
         this.marcarAssento(assento);
 
         return entrada;

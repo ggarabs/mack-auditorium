@@ -33,9 +33,13 @@ public class Teatro {
 
     public void novaCompra(){
         Pedido novoPedido = new Pedido();
-        this.carrinho = novoPedido;
+        this.setCarrinho(novoPedido);
 
         this.apresentaEspetaculos();
+    }
+
+    public void setCarrinho(Pedido novoCarrinho){
+        this.carrinho = novoCarrinho;
     }
 
     public void apresentaEspetaculos(){
@@ -55,12 +59,23 @@ public class Teatro {
         this.espetaculoSelecionado = show;
     }
 
+    public Espetaculo getEspetaculoSelecionado(){
+        return this.espetaculoSelecionado;
+    }
+
     public void novaEntrada(Integer tipo, Integer assento){
         Entrada entrada = espetaculoSelecionado.novaEntrada(tipo, assento);
         carrinho.adicionaEntrada(entrada);
     }
 
     public double finalizaCompra(String cpf){
-        return 0.0f;
+        Cliente cliente = null;
+        for(Cliente aux : clientes) if(aux.getCpf().equals(cpf)) cliente = aux;
+
+        cliente.adicionaPedido(carrinho);
+
+        double valorTotal = carrinho.calculaValorTotal();
+
+        return valorTotal;
     }
 }

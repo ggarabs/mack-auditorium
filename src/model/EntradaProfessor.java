@@ -5,8 +5,8 @@ public class EntradaProfessor extends Entrada {
         this.numeroDoAssento = numero;
     }
 
-    @Override
     public double calculaValor(){
-        return 0.0f;
+        double valor = espetaculo.getPreco();
+        return 0.4*valor;
     }
 }

@@ -1,6 +1,6 @@
 package model;
 
-public class Entrada {
+abstract class Entrada {
     protected Integer numeroDoAssento;
     protected Espetaculo espetaculo;
 
@@ -12,7 +12,13 @@ public class Entrada {
         this.numeroDoAssento = null;
     }
 
-    public double calculaValor(){
-        return 0.0f;
+    public Integer getNumeroDoAssento(){
+        return this.numeroDoAssento;
     }
+
+    public void setEspetaculo(Espetaculo espetaculo){
+        this.espetaculo = espetaculo;
+    }
+
+    abstract double calculaValor();
 }
