@@ -30,6 +30,10 @@ public class Espetaculo {
         return this.hora;
     }
 
+    public boolean getAssentoLivre(Integer index){
+        return assentos[index-1];
+    }
+
     public void apresentaAssentos(){
         System.out.println("    |||  Assentos Disponíveis |||");
         System.out.print("    ");
@@ -66,6 +70,8 @@ public class Espetaculo {
 
         entrada.setEspetaculo(this);
 
+        entradas.add(entrada);
+
         this.marcarAssento(assento);
 
         return entrada;
@@ -76,10 +82,10 @@ public class Espetaculo {
     }
 
     public String toString(){
-        return "";
+        return getNome() + " " + getData() + " " + getHora() + " R$ " + String.format("%.2f", getPreco());
     }
 
     private void marcarAssento(Integer assento){
-        assentos[assento] = true;
+        assentos[assento-1] = false;
     }
 }

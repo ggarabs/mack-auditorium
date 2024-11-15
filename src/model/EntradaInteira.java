@@ -6,7 +6,6 @@ public class EntradaInteira extends Entrada{
     }
 
     public double calculaValor(){
-        double valor = espetaculo.getPreco();
-        return valor;
+        return espetaculo.getPreco();
     }
 }

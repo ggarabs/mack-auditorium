@@ -13,6 +13,10 @@ public class Cliente {
         this.pedidos = new ArrayList<Pedido>();
     }
 
+    public String getNome(){
+        return this.nome;
+    }
+
     public String getCpf(){
         return this.cpf;
     }

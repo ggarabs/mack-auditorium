@@ -1,5 +1,6 @@
 import java.io.File;
 import java.io.FileNotFoundException;
+import java.util.InputMismatchException;
 import java.util.Scanner;
 
 import model.Teatro;
@@ -9,7 +10,7 @@ import services.ComprarEntrada;
 
 public class Main{
     public static void main(String[] args) {
-        Integer initialOption = null;
+        Integer initialOption = -1;
         String initialMenuPath = "src/view/initial_menu.txt";
         Teatro mackTheater = new Teatro();
 
@@ -23,7 +24,12 @@ public class Main{
                 System.out.print(content.toString());
                 System.out.print("Selecione uma opção: ");
 
-                initialOption = inputSc.nextInt();
+                try {
+                    initialOption = inputSc.nextInt();                    
+                } catch (InputMismatchException err) {
+                    System.out.println("\nOpção inválida! Por favor, digite um número entre 1 e 4.\n");
+                    continue;
+                }
 
                 System.out.println();
 
@@ -38,8 +44,10 @@ public class Main{
                         ComprarEntrada.comprar(mackTheater);
                         break;
                     case 4:
+                        System.out.println("Obrigado por usar o sistema MackTeatro! :)");
                         break;
                     default:
+                        System.out.println("Opção inválida! Por favor, digite um número entre 1 e 4.");
                         break;
                 }
 

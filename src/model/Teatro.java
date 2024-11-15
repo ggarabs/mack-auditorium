@@ -45,7 +45,7 @@ public class Teatro {
     public void apresentaEspetaculos(){
         System.out.println("*** VENDA DE ENTRADAS - ESPETÁCULOS ***");
         for(Integer it = 1; it <= espetaculos.size(); it++){
-            System.out.println("    " + it + ") " + espetaculos.get(it-1).getNome() + " " + espetaculos.get(it-1).getData() + " " + espetaculos.get(it-1).getHora() + " R$ " + espetaculos.get(it-1).getPreco());
+            System.out.println("    " + it + ") " + espetaculos.get(it-1).toString());
         }
     }
 

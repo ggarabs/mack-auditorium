@@ -6,7 +6,6 @@ public class EntradaProfessor extends Entrada {
     }
 
     public double calculaValor(){
-        double valor = espetaculo.getPreco();
-        return 0.4*valor;
+        return 0.4*espetaculo.getPreco();
     }
 }

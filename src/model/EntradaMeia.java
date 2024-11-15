@@ -6,7 +6,6 @@ public class EntradaMeia extends Entrada {
     }
 
     public double calculaValor(){
-        double valor = espetaculo.getPreco();
-        return 0.5*valor;
+        return 0.5*espetaculo.getPreco();
     }
 }
